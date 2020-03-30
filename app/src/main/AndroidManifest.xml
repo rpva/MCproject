@@ -9,7 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.LoginActivity"></activity>
+
+        <activity android:name=".Activities.NewClaimActivity" />
+        <activity android:name=".Activities.ReadClaimActivity" />
+        <activity android:name=".Activities.ListOfClaimsActivity" />
+        <activity android:name=".Activities.PerfilActivity" />
+        <activity android:name=".Activities.WelcomeActivity" />
+        <activity android:name=".Activities.WrongActivity" />
+
+        <activity android:name=".Activities.MenuUserActivity">
+
+            Activities.MenuUserActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
