@@ -36,7 +36,7 @@ public class ListOfClaimsActivity extends AppCompatActivity {
         globalState.setClaimItemList(_claimItemList);
 
         // assign adapter to list view
-        _listView = (ListView) findViewById(R.id.list_of_Claims);
+        _listView = (ListView) findViewById(R.id.list_of_Claims_list);
 
         ArrayAdapter<ClaimItem> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, _claimItemList);
@@ -54,7 +54,7 @@ public class ListOfClaimsActivity extends AppCompatActivity {
                 startActivity(intent);
 
                 // if instead of string, we pass a list with notes, we can retrieve the original Note object this way
-                //Note note = (Note)parent.getItemAtPosition(position);
+                //ClaimItem claimItem = (claim)parent.getItemAtPosition(position);
             }
         });
 
@@ -72,6 +72,7 @@ public class ListOfClaimsActivity extends AppCompatActivity {
         
     }
 
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -80,11 +81,12 @@ public class ListOfClaimsActivity extends AppCompatActivity {
 
                 if (resultCode == Activity.RESULT_OK) {
 
-                    // retrieve the title and body of the note from the intent
+                    // retrieve the caracteristics of the claim from the intent
                     String claimTitle = data.getStringExtra(InternalProtocol.KEY_NEW_CLAIM_TITLE);
                     String claimPlateNumber = data.getStringExtra(InternalProtocol.KEY_NEW_CLAIM_PLATE_NUMBER);
                     String claimDescription = data.getStringExtra(InternalProtocol.KEY_NEW_CLAIM_DESCRIPTION);
                     String claimDateOcorrence = data.getStringExtra(InternalProtocol.KEY_NEW_CLAIM_DATE_OCORRENCE);
+
                     Log.d(InternalProtocol.LOG, "New Claim:" + claimTitle + "," + claimPlateNumber + "," + claimDescription + "," + claimDateOcorrence );
 
                     // update the domain data structures

@@ -1,20 +1,16 @@
 package pt.ulisboa.tecnico.sise.mc.project.insureappgroup10.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputEditText;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
@@ -64,12 +60,12 @@ public class NewClaimActivity extends AppCompatActivity {
                 }
 
                 else if (claimdescription.equals("")) {
-                    Toast.makeText(v.getContext(), "Write a claim plate Number", Toast.LENGTH_LONG).show();
+                    Toast.makeText(v.getContext(), "Write a claim description", Toast.LENGTH_LONG).show();
                     return;
                 }
 
                 else if (claimdateOcorrence.equals("")) {
-                    Toast.makeText(v.getContext(), "Write a claim plate Number", Toast.LENGTH_LONG).show();
+                    Toast.makeText(v.getContext(), "Write a claim Ocorrence Date", Toast.LENGTH_LONG).show();
                     return;
                 }
 

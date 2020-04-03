@@ -1,65 +1,55 @@
 package pt.ulisboa.tecnico.sise.mc.project.insureappgroup10.DataModel;
 
-public class ClaimItem {
-
-    private String _title;
-    private String _id;
-    private String _plateNumber;
-    private String _description;
-    private String _dateOcorrence;
+import java.io.Serializable;
 
 
+public class ClaimItem  implements Serializable{
+    private static final long serialVersionUID = 80004589896989016L;
+    protected final int _id;
+    protected final String _title;
 
-    public ClaimItem( String title, String plateNumber, String description, String dateOcorrence) {
+    public ClaimItem( String title, int id ) {
         this._title = title;
-        //this._id = id;
-        this._plateNumber=plateNumber;
-        this._dateOcorrence =dateOcorrence;
-        this._description= description;
+        this._id = id;
 
     }
 
+
+    public int getId() {
+        return _id;
+    }
 
     public String getTitle() {
         return _title;
     }
 
-    public void setTitle(String claimTitle) {
-        this._title = claimTitle;
-    }
 
-    public String getId() {
-        return _id;
-    }
 
-    public void setId(String id) { this._id = id;
-    }
-    public String getPlateNumber() {
-        return _plateNumber;
-    }
-
-    public void setPlateNumber(String plateNumber) {
-        this._plateNumber = plateNumber;
-    }
-
-    public String getDateOcorrence() {
-        return _dateOcorrence;
-    }
-
-    public void setDateOcorrence(String dateOcorrence) { this._dateOcorrence = dateOcorrence;
-    }
-
-    public String getDesciption() {
-        return _description;
-    }
-
-    public void setDescription(String description) { this._description = description;
-    }
 
     @Override
-    public String toString() {
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof ClaimItem)) {
+            return false;
+        }
+        ClaimItem other = (ClaimItem) obj;
+        if (_id != other._id) {
+            return false;
+        }
+        return true;
+    }
 
-        return "Claim Id " + _id + " " + _title +  " " + _plateNumber + _dateOcorrence+ " " + _description +  ".";
+
+    @Override
+
+    public String toString() {
+        return "Claim Id: " + _id + ", " +
+                "Claim Title: " + _title + ".";
     }
     }
 
