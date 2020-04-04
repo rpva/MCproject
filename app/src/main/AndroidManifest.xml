@@ -15,7 +15,6 @@
         <activity android:name=".Activities.ReadClaimActivity" />
         <activity android:name=".Activities.ListOfClaimsActivity" />
         <activity android:name=".Activities.PerfilActivity" />
-        <activity android:name=".Activities.WelcomeActivity" />
 
         <activity android:name=".Activities.MenuUserActivity">
 
