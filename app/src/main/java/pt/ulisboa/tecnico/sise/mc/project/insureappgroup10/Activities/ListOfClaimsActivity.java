@@ -82,15 +82,13 @@ public class ListOfClaimsActivity extends AppCompatActivity {
                 if (resultCode == Activity.RESULT_OK) {
 
                     // retrieve the caracteristics of the claim from the intent
-                    String claimTitle = data.getStringExtra(InternalProtocol.KEY_NEW_CLAIM_TITLE);
-                    String claimPlateNumber = data.getStringExtra(InternalProtocol.KEY_NEW_CLAIM_PLATE_NUMBER);
-                    String claimDescription = data.getStringExtra(InternalProtocol.KEY_NEW_CLAIM_DESCRIPTION);
-                    String claimDateOcorrence = data.getStringExtra(InternalProtocol.KEY_NEW_CLAIM_DATE_OCORRENCE);
+                    String title = data.getStringExtra(InternalProtocol.KEY_NEW_CLAIM_TITLE);
 
-                    Log.d(InternalProtocol.LOG, "New Claim:" + claimTitle + "," + claimPlateNumber + "," + claimDescription + "," + claimDateOcorrence );
+
+                    Log.d(InternalProtocol.LOG, "New Claim:" + title + "," + id  );
 
                     // update the domain data structures
-                    _claimItemList.add(new ClaimItem(claimTitle, claimPlateNumber, claimDescription, claimDateOcorrence));
+                    _claimItemList.add(new ClaimItem(title, id));
 
                     // refresh the list on screen
                     _listView.setAdapter(new ArrayAdapter<>(this,

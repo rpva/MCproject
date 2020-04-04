@@ -158,5 +158,13 @@ public class Customer extends Person implements Serializable {
 //                "Password:" + _password + ", " +
                 "Policy Number:" + _policyNumber + ".";
     }
+
+    public List<ClaimItem> getClaimItemList() {
+        return _claimItemList;
+    }
+
+    public void setClaimItemList(List<ClaimItem> _claimItemList) {
+        this._claimItemList = _claimItemList;
+    }
 }
 
